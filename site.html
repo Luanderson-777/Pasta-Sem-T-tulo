@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Índices - Engenharia Econômica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f0f0f0;
+        }
+        
+        .slide {
+            width: 297mm;
+            height: 210mm;
+            background: white;
+            margin: 20px auto;
+            padding: 60px 80px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .slide::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(to right, #1e40af, #3b82f6);
+        }
+        
+        h1 {
+            color: #1e40af;
+            font-size: 48px;
+            margin-bottom: 20px;
+            border-bottom: 4px solid #3b82f6;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #1e40af;
+            font-size: 56px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        h3 {
+            color: #64748b;
+            font-size: 32px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .subtitle {
+            color: #64748b;
+            font-size: 28px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .content {
+            font-size: 24px;
+            line-height: 1.8;
+            color: #1f2937;
+            flex: 1;
+        }
+        
+        .box {
+            background: #f1f5f9;
+            padding: 20px 25px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 5px solid #3b82f6;
+        }
+        
+        .box-blue {
+            background: #dbeafe;
+            border-left-color: #2563eb;
+        }
+        
+        .box-green {
+            background: #d1fae5;
+            border-left-color: #10b981;
+        }
+        
+        .box-purple {
+            background: #e9d5ff;
+            border-left-color: #a855f7;
+        }
+        
+        .box-yellow {
+            background: #fef3c7;
+            border-left-color: #f59e0b;
+        }
+        
+        .box-red {
+            background: #fee2e2;
+            border-left-color: #ef4444;
+        }
+        
+        .box strong {
+            display: block;
+            font-size: 26px;
+            margin-bottom: 8px;
+            color: #1e40af;
+        }
+        
+        .formula {
+            background: #f8fafc;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: #1e40af;
+            border: 2px solid #cbd5e1;
+        }
+        
+        ul {
+            margin-left: 30px;
+            margin-top: 15px;
+        }
+        
+        li {
+            margin: 12px 0;
+            font-size: 24px;
+        }
+        
+        .highlight {
+            background: #dbeafe;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #1e40af;
+            margin-top: 40px;
+        }
+        
+        .check {
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .icon {
+            font-size: 28px;
+            margin-right: 10px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .slide {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+        
+        .footer-info {
+            text-align: center;
+            color: #64748b;
+            font-size: 20px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1 - CAPA -->
+    <div class="slide">
+        <h2>ANÁLISE DE ÍNDICES</h2>
+        <h3>Engenharia Econômica</h3>
+        <div class="footer-info">
+            Luanderson Ryan Sales de Moraes<br>
+            Engenharia Elétrica<br>
+            Profª Charlene Tereza da Silva Dias Leite
+        </div>
+    </div>
+
+    <!-- SLIDE 2 - O QUE SÃO -->
+    <div class="slide">
+        <h1>O que são Índices Econômicos?</h1>
+        <div class="content">
+            <p style="font-size: 28px; margin: 40px 0;">Indicadores que medem a variação de preços, custos e desempenho econômico ao longo do tempo.</p>
+            
+            <div class="box box-blue">
+                <strong>Importância</strong>
+                • Corrigir valores defasados<br>
+                • Fazer análises realistas de projetos
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 3 - POR QUE USAR -->
+    <div class="slide">
+        <h1>Por que usar Índices?</h1>
+        <div class="content">
+            <div class="box">
+                <strong><span class="icon">📊</span>Inflação</strong>
+                Os preços mudam com o tempo<br>
+                R$ 100 em 2020 ≠ R$ 100 em 2025
+            </div>
+            
+            <div class="box">
+                <strong><span class="icon">💰</span>Comparações Justas</strong>
+                Comparar custos de diferentes períodos de forma correta
+            </div>
+            
+            <div class="box">
+                <strong><span class="icon">⚡</span>Aplicação em Projetos</strong>
+                Atualizar orçamentos, prever custos futuros, avaliar viabilidade
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 4 - PRINCIPAIS ÍNDICES -->
+    <div class="slide">
+        <h1>Principais Índices no Brasil</h1>
+        <div class="content">
+            <div class="box box-blue">
+                <strong>IPCA - Índice de Preços ao Consumidor Amplo</strong>
+                Inflação oficial do país (IBGE)
+            </div>
+            
+            <div class="box box-green">
+                <strong>IGP-M - Índice Geral de Preços do Mercado</strong>
+                Usado em contratos de aluguel e energia (FGV)
+            </div>
+            
+            <div class="box box-purple">
+                <strong>INCC - Índice Nacional de Custo da Construção</strong>
+                Específico para construção civil (FGV)
+            </div>
+            
+            <div class="box box-yellow">
+                <strong>SELIC - Taxa Básica de Juros</strong>
+                Taxa básica de juros (Banco Central)
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 5 - CÁLCULO -->
+    <div class="slide">
+        <h1>Como Funciona o Cálculo</h1>
+        <div class="content">
+            <div class="formula">
+                Valor Corrigido = Valor Inicial × (Índice Final / Índice Inicial)
+            </div>
+            
+            <div class="box box-blue">
+                <strong>Exemplo Prático</strong>
+                • Equipamento em jan/2023: R$ 10.000 (IPCA = 100)<br>
+                • IPCA em jan/2025: 110<br>
+                <br>
+                <span style="font-size: 26px; color: #1e40af;">
+                    <strong>Valor corrigido = 10.000 × (110/100) = R$ 11.000</strong>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 6 - APLICAÇÃO PRÁTICA -->
+    <div class="slide">
+        <h1>Aplicação Prática em Engenharia</h1>
+        <div class="content">
+            <p style="font-size: 26px; font-weight: bold; margin-bottom: 20px;">Projeto: Subestação Elétrica</p>
+            
+            <div class="box">
+                • Orçamento feito em 2022: R$ 2.000.000<br>
+                • Execução prevista para 2025<br>
+                • INCC acumulado no período: +15%
+            </div>
+            
+            <div class="box box-red">
+                <strong>❌ Sem correção:</strong>
+                Orçamento insuficiente → Obra para no meio!
+            </div>
+            
+            <div class="box box-green">
+                <strong>✅ Com correção por índices:</strong>
+                Orçamento atualizado: R$ 2.300.000<br>
+                Projeto viável e realista!
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 7 - TIPOS DE ANÁLISE -->
+    <div class="slide">
+        <h1>Tipos de Análise com Índices</h1>
+        <div class="content">
+            <div class="box">
+                <strong><span class="icon">📈</span>Análise Nominal vs Real</strong>
+                • Nominal: valores sem correção<br>
+                • Real: valores corrigidos pela inflação
+            </div>
+            
+            <div class="box">
+                <strong><span class="icon">🔄</span>Reajuste de Contratos</strong>
+                Usar índices específicos (IGP-M, IPCA) conforme contrato
+            </div>
+            
+            <div class="box">
+                <strong><span class="icon">📊</span>Projeção de Custos</strong>
+                Estimar custos futuros com base em séries históricas
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 8 - CONCLUSÃO -->
+    <div class="slide">
+        <h1>Conclusão</h1>
+        <div class="content">
+            <p style="font-size: 28px; margin-bottom: 30px;">A análise de índices é fundamental para:</p>
+            
+            <p style="font-size: 26px; line-height: 2;">
+                <span class="check">✓</span> Fazer orçamentos realistas e atualizados<br>
+                <span class="check">✓</span> Evitar prejuízos por defasagem de valores<br>
+                <span class="check">✓</span> Tomar decisões econômicas corretas em projetos<br>
+                <span class="check">✓</span> Entender o impacto da inflação nos investimentos
+            </p>
+            
+            <div class="highlight">
+                Ignorar índices = planejar com dados irreais!
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 9 - AGRADECIMENTO -->
+    <div class="slide">
+        <h2 style="margin-top: 150px;">Obrigado!</h2>
+    </div>
+
+</body>
+</html>
